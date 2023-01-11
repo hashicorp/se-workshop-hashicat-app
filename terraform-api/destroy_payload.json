@@ -1,0 +1,17 @@
+{
+    "data": {
+        "attributes": {
+            "is-destroy": true,
+            "message": "Triggered Destroy"
+        },
+        "type": "runs",
+        "relationships": {
+            "workspace": {
+                "data": {
+                    "type": "workspaces",
+                    "id": "WORKSPACE_ID"
+                }
+            }
+        }
+    }
+}

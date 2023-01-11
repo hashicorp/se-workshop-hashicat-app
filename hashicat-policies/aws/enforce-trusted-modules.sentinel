@@ -1,0 +1,16 @@
+import "tfconfig/v2" as tfconfig
+
+param approved_version default "3.0.0"
+
+aws_s3_module = filter tfconfig.module_calls as _, module {
+  module.name is "s3_bucket" and 
+  module.source is "app.terraform.io/interrupt-software/s3-bucket/aws"
+}
+    
+aws_s3_module_version_is_valid = rule {
+  aws_s3_module.s3_bucket.version_constraint is approved_version
+}
+    
+main = rule {
+  aws_s3_module_version_is_valid
+}

@@ -1,0 +1,16 @@
+import "tfconfig/v2" as tfconfig
+
+param approved_version default "3.2.1"
+
+az_module = filter tfconfig.module_calls as _, module {
+  module.name is "network" and 
+  module.source is "app.terraform.io/interrupt-software/network/azurerm"
+}
+    
+azure_rm_network_module_version_is_valid = rule {
+  az_module.network.version_constraint is approved_version
+}
+    
+main = rule {
+  azure_rm_network_module_version_is_valid
+}

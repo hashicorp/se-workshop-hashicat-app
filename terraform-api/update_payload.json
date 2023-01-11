@@ -1,0 +1,9 @@
+{
+    "data": {
+        "attributes": {
+            "name": "hashicat-api",
+            "description": "This is an update to the description."
+        },
+        "type": "workspaces"
+    }
+}

@@ -1,0 +1,25 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+terraform.tfvars
+
+# no creds
+*.pem
+
+# terraformrc file
+terraform.rc
+.terraformrc
+
+# saves
+*.save
+
+# tests
+test.bash
+
+# Experimental changes
+066*

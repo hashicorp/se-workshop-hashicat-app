@@ -1,0 +1,42 @@
+# HashiCat deployment Nov 2022
+
+# Terraform state files    #
+############################
+*.tfstate
+*.tfstate.backup
+
+# Terraform provider files #
+############################
+.terraform
+.terraform.lock.hcl
+
+
+# Crash log files          #
+############################
+crash.log
+crash.*.log
+
+# tfvars files, which likely
+# contain sensitive data
+############################
+*.tfvars
+*.tfvars.json
+
+# remote_backend - which is
+# used only during bootstrap
+############################
+remote_backend.tf
+
+# CLI configuration files  #
+############################
+.terraformrc
+terraform.rc
+
+# Exercises - solution key #
+############################
+# exercises
+
+# GitHub Actions - do not  
+# propagate until the end
+############################
+terraform.yml
