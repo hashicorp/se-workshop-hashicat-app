@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (c) HashiCorp, Inc.
+
 
 export HCLOGO="                                                  
                         ~5&:    .&5~              

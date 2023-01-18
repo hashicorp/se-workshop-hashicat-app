@@ -1,3 +1,5 @@
+# Copyright (c) HashiCorp, Inc.
+
 policy "enforce-mandatory-tags" {
     enforcement_level = "soft-mandatory"
 }

@@ -1,3 +1,5 @@
+# Copyright (c) HashiCorp, Inc.
+
 
 resource "tfe_registry_module" "aws-s3-bucket" {
   vcs_repo {
