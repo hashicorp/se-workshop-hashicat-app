@@ -1,3 +1,5 @@
+# Copyright (c) HashiCorp, Inc.
+
 output "uuid" {
   value = random_uuid.id.*.result
 }

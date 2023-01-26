@@ -1,4 +1,6 @@
 #!/bin/bash
+# Copyright (c) HashiCorp, Inc.
+
 
 typewriter() {
     delay=0.005

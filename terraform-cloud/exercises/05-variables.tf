@@ -1,3 +1,5 @@
+# Copyright (c) HashiCorp, Inc.
+
 
 variable "instruqt_aws_access_key_id" {
   type      = string

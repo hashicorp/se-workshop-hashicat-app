@@ -1,3 +1,5 @@
+# Copyright (c) HashiCorp, Inc.
+
 variable "tfc_organization" {
   type = string
 }
