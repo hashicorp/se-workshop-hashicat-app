@@ -44,7 +44,7 @@ data "tfe_organization" "org" {
 resource "tfe_workspace" "hashicat" {
   name           = var.tfc_workspace
   organization   = data.tfe_organization.org.name
-  tag_names      = ["hashicat", "aws"]
+  tag_names      = ["hashicat", "CLOUD_ENV"]
   execution_mode = "remote"
 }
 
