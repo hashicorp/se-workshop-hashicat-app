@@ -31,7 +31,7 @@ data "tfe_organization" "org" {
 # resource "tfe_workspace" "hashicat" {
 #   name           = var.tfc_workspace
 #   organization   = data.tfe_organization.org.name
-#   tag_names      = ["hashicat", "aws"]
+#   tag_names      = ["hashicat", "CLOUD_ENV"]
 #   execution_mode = "local"
 # }
 
@@ -50,7 +50,7 @@ data "tfe_organization" "org" {
 # resource "tfe_workspace" "hashicat" {
 #   name           = var.tfc_workspace
 #   organization   = data.tfe_organization.org.name
-#   tag_names      = ["hashicat", "aws"]
+#   tag_names      = ["hashicat", "CLOUD_ENV"]
 #   execution_mode = "remote"
 # }
 
@@ -69,7 +69,7 @@ data "tfe_organization" "org" {
 # resource "tfe_workspace" "hashicat" {
 #   name         = var.tfc_workspace
 #   organization = data.tfe_organization.org.name
-#   tag_names    = ["hashicat", "aws"]
+#   tag_names    = ["hashicat", "CLOUD_ENV"]
 #   auto_apply   = true
 
 #   vcs_repo {
@@ -90,7 +90,7 @@ data "tfe_organization" "org" {
 resource "tfe_workspace" "hashicat" {
   name         = var.tfc_workspace
   organization = data.tfe_organization.org.name
-  tag_names    = ["hashicat", "aws"]
+  tag_names    = ["hashicat", "CLOUD_ENV"]
   auto_apply   = true
 }
 
