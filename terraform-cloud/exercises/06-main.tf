@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Set up ADMINS team with the following permissions:

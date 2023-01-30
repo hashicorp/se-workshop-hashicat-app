@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 
 variable "admins" {
   type = list(string)
