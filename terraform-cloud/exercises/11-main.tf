@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add a collection of policies to enhance the governance rules

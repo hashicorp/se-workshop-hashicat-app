@@ -1,5 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-
 
 variable "oauth_connection_name" {
   type    = string

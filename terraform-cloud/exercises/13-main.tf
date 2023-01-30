@@ -1,5 +1,8 @@
-# Copyright (c) HashiCorp, Inc.
 
+/**** **** **** **** **** **** **** **** **** **** **** ****
+ Specifies the Terraform provider for our deployment. 
+ For example, "aws_s3"
+**** **** **** **** **** **** **** **** **** **** **** ****/
 
 resource "tfe_registry_module" "aws-s3-bucket" {
   vcs_repo {

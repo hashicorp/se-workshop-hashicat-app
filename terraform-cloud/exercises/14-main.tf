@@ -341,6 +341,11 @@ resource "tfe_policy_set" "test" {
   }
 }
 
+/**** **** **** **** **** **** **** **** **** **** **** ****
+ Specifies the Terraform provider for our deployment. 
+ For example, "aws_s3"
+**** **** **** **** **** **** **** **** **** **** **** ****/
+
 resource "tfe_registry_module" "aws-s3-bucket" {
   vcs_repo {
     display_identifier = "${var.github_organization}/${var.module_repo}"
