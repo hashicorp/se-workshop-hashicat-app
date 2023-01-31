@@ -1,7 +1,7 @@
 
-# Source: hashicat-aws
+# Source: hashicat-azure
 # Prefix must be all lowercase letters, digits, and hyphens.
-# Region is defaulted to us-east-1 and can be modified.
+# Location is defaulted to us-central but that is not reliable
 
 prefix = "YOUR_NAME"
-region = "us-east-1"
+location = "eastus2"
