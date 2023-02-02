@@ -15,3 +15,7 @@ policy "restrict-deployment-cost" {
 module "tfplan-functions" {
   source = "https://raw.githubusercontent.com/hashicorp/terraform-sentinel-policies/main/common-functions/tfplan-functions/tfplan-functions.sentinel"
 }
+
+module "azure-functions" {
+  source = "https://raw.githubusercontent.com/interrupt-software/terraform-sentinel-policies/main/azure/azure-functions/azure-functions.sentinel"
+}
