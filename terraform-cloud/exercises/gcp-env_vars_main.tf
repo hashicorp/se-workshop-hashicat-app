@@ -1,26 +1,26 @@
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
- Add AWS_ACCESS_KEY_ID to the Cloud Credentials variable set
+ Add GOOGLE_CREDENTIALS to the Cloud Credentials variable set
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
-resource "tfe_variable" "aws_access_key_id" {
-  key             = "AWS_ACCESS_KEY_ID"
-  value           = var.instruqt_aws_access_key_id
+resource "tfe_variable" "google_cloud_credentials" {
+  key             = "GOOGLE_CREDENTIALS"
+  value           = var.google_credentials
   category        = "env"
-  description     = "AWS access key"
+  description     = "Google Credentials"
   variable_set_id = tfe_variable_set.hashicat.id
   sensitive       = true
 }
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
- Add AWS_SECRET_ACCESS_KEY to the Cloud Credentials variable set
+ Add Google Cloud project ID to the Cloud Credentials variable set
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
-resource "tfe_variable" "aws_secret_access_key" {
-  key             = "AWS_SECRET_ACCESS_KEY"
-  value           = var.instruqt_aws_secret_access_key
-  category        = "env"
-  description     = "AWS secret key"
+resource "tfe_variable" "google_cloud_project" {
+  key             = "project"
+  value           = var.project
+  category        = "terraform"
+  description     = "Google Cloud project ID"
   variable_set_id = tfe_variable_set.hashicat.id
-  sensitive       = true
+  sensitive       = false
 }
