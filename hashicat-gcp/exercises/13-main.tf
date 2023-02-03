@@ -68,8 +68,8 @@ resource "google_compute_instance" "hashicat" {
 
   labels = {
     name        = "hashicat",
-    environment = "production",
-    department  = "hashicat-social"
+    Environment = "production",
+    Department  = "hashicat-social"
   }
 
 }
