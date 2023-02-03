@@ -1,10 +1,10 @@
 
-variable "instruqt_aws_access_key_id" {
+variable "google_credentials" {
   type      = string
   sensitive = true
 }
 
-variable "instruqt_aws_secret_access_key" {
+variable "project" {
   type      = string
-  sensitive = true
+  sensitive = false
 }
