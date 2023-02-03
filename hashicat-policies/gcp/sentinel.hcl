@@ -16,6 +16,6 @@ module "tfplan-functions" {
   source = "https://raw.githubusercontent.com/hashicorp/terraform-sentinel-policies/main/common-functions/tfplan-functions/tfplan-functions.sentinel"
 }
 
-module "gcp_functions" {
+module "gcp-functions" {
   source = "https://raw.githubusercontent.com/hashicorp/terraform-sentinel-policies/main/gcp/gcp-functions/gcp-functions.sentinel"
 }
