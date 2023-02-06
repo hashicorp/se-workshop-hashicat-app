@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add PREFIX to the hashicat workspace variables
