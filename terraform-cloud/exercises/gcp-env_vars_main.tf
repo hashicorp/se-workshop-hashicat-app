@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add GOOGLE_CREDENTIALS to the Cloud Credentials variable set
