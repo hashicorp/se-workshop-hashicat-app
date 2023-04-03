@@ -133,6 +133,19 @@ resource "aws_instance" "hashicat" {
   }
 }
 
+esource "aws_instance" "hashicat-2" {
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = var.instance_type
+  key_name                    = aws_key_pair.hashicat.key_name
+  associate_public_ip_address = true
+  subnet_id                   = aws_subnet.hashicat.id
+  vpc_security_group_ids      = [aws_security_group.hashicat.id]
+
+  tags = {
+    Name = "${var.prefix}-hashicat-instance-2"
+  }
+}
+
 # We're using a little trick here so we can run the provisioner without
 # destroying the VM. Do not do this in production.
 
