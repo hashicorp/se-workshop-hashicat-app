@@ -133,7 +133,7 @@ resource "aws_instance" "hashicat" {
   }
 }
 
-esource "aws_instance" "hashicat-2" {
+resource "aws_instance" "hashicat-2" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.hashicat.key_name
