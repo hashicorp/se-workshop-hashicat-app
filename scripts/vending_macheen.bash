@@ -245,6 +245,7 @@ rm -f $DEPLOYMENT_FILE
 
 terraform init --upgrade
 terraform apply -auto-approve
+terraform apply -auto-approve -refresh-only
 clear
 terraform output -json vending_machine_workspaces \
 | jq --arg deployment_id "$deployment_id" '.[] | select(.tag_names[] | select(. == $deployment_id))'
