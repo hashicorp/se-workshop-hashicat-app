@@ -94,9 +94,8 @@ data "aws_ami" "ubuntu" {
   most_recent = true
 
   filter {
-    name = "name"
-    #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
   }
 
   filter {
@@ -187,7 +186,7 @@ resource "null_resource" "configure-cat-app" {
 }
 
 resource "tls_private_key" "hashicat" {
-  algorithm = "RSA"
+  algorithm = "ED25519"
 }
 
 locals {
