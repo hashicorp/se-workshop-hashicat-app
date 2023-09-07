@@ -12,7 +12,7 @@ resource "tfe_policy_set" "test" {
   workspace_ids = [tfe_workspace.hashicat.id]
 
   vcs_repo {
-    identifier         = "${var.github_organization}/${var.github_repo}"
+    identifier         = "${var.github_owner}/${var.github_repo}"
     branch             = "main"
     ingress_submodules = false
     oauth_token_id     = tfe_oauth_client.github.oauth_token_id

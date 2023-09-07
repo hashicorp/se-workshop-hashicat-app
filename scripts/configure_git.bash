@@ -39,7 +39,6 @@ note="  Git uses a username to associate commits with an
   For instance, 
 
     Username: shiffman
-    Organization: shiffman
     URL: https://github.com/shiffman
 
   We use this value to set the GITHUB_OWNER 
@@ -57,23 +56,23 @@ cnone
   echo ""
 # done
 
-note="  The organization field behaves the same as 
-  owner, which should be used in most cases. 
+# note="  The organization field behaves the same as 
+#   owner, which should be used in most cases. 
   
-  We use this value to set the GITHUB_ORGANIZATION 
-  environment variable. 
+#   We use this value to set the GITHUB_ORGANIZATION 
+#   environment variable. 
   
-  Press return to accept the default. Or, you can
-  enter a different GitHub organization."
+#   Press return to accept the default. Or, you can
+#   enter a different GitHub organization."
 
-cyellow
-ctab "-"
-typewriter "${note}"
-cnone
+# cyellow
+# ctab "-"
+# typewriter "${note}"
+# cnone
 
-echo -e '\033[2K'
-read -p " Github Organization [${git_user}]: " git_org
-echo ""
+# echo -e '\033[2K'
+# read -p " Github Organization [${git_user}]: " git_org
+# echo ""
 
 note="  A GitHub OAuth / Personal Access Token.
 
@@ -118,7 +117,7 @@ fi
 # Terraform GitHub Repo. We express these
 # to avoid having to reload the terminal
 
-export GITHUB_ORGANIZATION=$git_org
+# export GITHUB_ORGANIZATION=$git_org      # DEPRECATED #
 export GITHUB_TOKEN=$git_token
 export GITHUB_OWNER=$git_user
 export GITHUB_REPO="hashicat-app"
@@ -136,11 +135,15 @@ else
   echo "export GITHUB_OWNER=${GITHUB_OWNER}" >> /root/.bashrc
 fi
 
-if grep -wq "GITHUB_ORGANIZATION" "/root/.bashrc"; then
-  sed -i -r "s|(export GITHUB_ORGANIZATION=)(.+)?$|\1$GITHUB_ORGANIZATION|g" /root/.bashrc
-else
-  echo "export GITHUB_ORGANIZATION=${GITHUB_ORGANIZATION}" >> /root/.bashrc
-fi
+##################################### DEPRECATED ##################################################
+
+# if grep -wq "GITHUB_ORGANIZATION" "/root/.bashrc"; then
+#   sed -i -r "s|(export GITHUB_ORGANIZATION=)(.+)?$|\1$GITHUB_ORGANIZATION|g" /root/.bashrc
+# else
+#   echo "export GITHUB_ORGANIZATION=${GITHUB_ORGANIZATION}" >> /root/.bashrc
+# fi
+
+###################################################################################################
 
 if grep -wq "GITHUB_TOKEN" "/root/.bashrc"; then
   sed -i -r "s|(export GITHUB_TOKEN=)(.+)?$|\1$GITHUB_TOKEN|g" /root/.bashrc
@@ -162,14 +165,15 @@ fi
 # 1. link the VCS connection, and
 # 2. load the PMR module from GitHub
 
-export TF_VAR_github_organization=$GITHUB_ORGANIZATION
+# export TF_VAR_github_organization=$GITHUB_ORGANIZATION    # DEPRECATED #
+export TF_VAR_github_owner=$GITHUB_OWNER
 export TF_VAR_github_token=$GITHUB_TOKEN
 export TF_VAR_github_repo=$GITHUB_REPO
 
-if grep -wq "TF_VAR_github_organization" "/root/.bashrc"; then
-  sed -i -r "s|(export TF_VAR_github_organization=)(.+)?$|\1$GITHUB_ORGANIZATION|g" /root/.bashrc
+if grep -wq "TF_VAR_github_owner" "/root/.bashrc"; then
+  sed -i -r "s|(export TF_VAR_github_owner=)(.+)?$|\1$GITHUB_OWNER|g" /root/.bashrc
 else
-  echo "export TF_VAR_github_organization=${GITHUB_ORGANIZATION}" >> /root/.bashrc
+  echo "export TF_VAR_github_owner=${GITHUB_OWNER}" >> /root/.bashrc
 fi
 
 if grep -wq "TF_VAR_github_token" "/root/.bashrc"; then
@@ -189,8 +193,7 @@ echo -e '\033[2K'
 note=" Thank you. We will use the following information locally:
 
     Username:     ${GITHUB_OWNER}
-    Organization: ${GITHUB_ORGANIZATION}
-    URL:          https://github.com/${GITHUB_ORGANIZATION}
+    URL:          https://github.com/${GITHUB_OWNER}
     Git PAT:      **********
 
 "
