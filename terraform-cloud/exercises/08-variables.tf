@@ -4,7 +4,7 @@ variable "oauth_connection_name" {
   default = "HashiCat Workshop"
 }
 
-variable "github_organization" {
+variable "github_owner" {
   type = string
 }
 

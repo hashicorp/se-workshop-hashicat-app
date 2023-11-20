@@ -67,7 +67,7 @@ resource "tfe_workspace" "hashicat" {
   auto_apply   = true
 
   vcs_repo {
-    identifier     = "${var.github_organization}/${var.github_repo}"
+    identifier     = "${var.github_owner}/${var.github_repo}"
     oauth_token_id = tfe_oauth_client.github.oauth_token_id
   }
 }
