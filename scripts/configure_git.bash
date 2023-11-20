@@ -56,24 +56,6 @@ cnone
   echo ""
 # done
 
-# note="  The organization field behaves the same as 
-#   owner, which should be used in most cases. 
-  
-#   We use this value to set the GITHUB_ORGANIZATION 
-#   environment variable. 
-  
-#   Press return to accept the default. Or, you can
-#   enter a different GitHub organization."
-
-# cyellow
-# ctab "-"
-# typewriter "${note}"
-# cnone
-
-# echo -e '\033[2K'
-# read -p " Github Organization [${git_user}]: " git_org
-# echo ""
-
 note="  A GitHub OAuth / Personal Access Token.
 
   We use this value to set the GITHUB_TOKEN 
@@ -108,16 +90,10 @@ then
   git_org=$git_user
 fi
 
-# echo $git_user
-# echo $git_org
-# echo $user_email
-# echo $git_token
-
 # These are runtime variables for the
 # Terraform GitHub Repo. We express these
 # to avoid having to reload the terminal
 
-# export GITHUB_ORGANIZATION=$git_org      # DEPRECATED #
 export GITHUB_TOKEN=$git_token
 export GITHUB_OWNER=$git_user
 export GITHUB_REPO="hashicat-app"
@@ -134,16 +110,6 @@ if grep -wq "GITHUB_OWNER" "/root/.bashrc"; then
 else
   echo "export GITHUB_OWNER=${GITHUB_OWNER}" >> /root/.bashrc
 fi
-
-##################################### DEPRECATED ##################################################
-
-# if grep -wq "GITHUB_ORGANIZATION" "/root/.bashrc"; then
-#   sed -i -r "s|(export GITHUB_ORGANIZATION=)(.+)?$|\1$GITHUB_ORGANIZATION|g" /root/.bashrc
-# else
-#   echo "export GITHUB_ORGANIZATION=${GITHUB_ORGANIZATION}" >> /root/.bashrc
-# fi
-
-###################################################################################################
 
 if grep -wq "GITHUB_TOKEN" "/root/.bashrc"; then
   sed -i -r "s|(export GITHUB_TOKEN=)(.+)?$|\1$GITHUB_TOKEN|g" /root/.bashrc
@@ -165,7 +131,6 @@ fi
 # 1. link the VCS connection, and
 # 2. load the PMR module from GitHub
 
-# export TF_VAR_github_organization=$GITHUB_ORGANIZATION    # DEPRECATED #
 export TF_VAR_github_owner=$GITHUB_OWNER
 export TF_VAR_github_token=$GITHUB_TOKEN
 export TF_VAR_github_repo=$GITHUB_REPO
