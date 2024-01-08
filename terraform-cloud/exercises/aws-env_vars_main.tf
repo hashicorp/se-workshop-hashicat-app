@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add AWS_ACCESS_KEY_ID to the Cloud Credentials variable set
