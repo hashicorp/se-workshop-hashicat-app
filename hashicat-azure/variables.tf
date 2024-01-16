@@ -7,6 +7,30 @@
 
 variable "prefix" {
   description = "This prefix will be included in the name of most resources."
+
+  validation {
+    condition     = length(var.prefix) <= 58
+    error_message = "Prefix must be at most 58 characters."
+  }
+
+  validation {
+    condition     = can(regex("^([[:lower:]-[:digit:]])*$", var.prefix))
+    error_message = "Prefix must include only lowercase alphanumeric characters, numbers and hyphen."
+  }
+
+  validation {
+    condition     = can(regex("^[[:lower:]]", var.prefix))
+    error_message = "Prefix must start with a letter."
+  }
+
+  # Our restrictions here are because var.prefix is used by azurerm_public_ip, which has the following restrictions:
+  # domain_name_label must contain only lowercase alphanumeric characters, numbers and hyphens.
+  # It must start with a letter, end only with a number or letter and not exceed 63 characters in length
+  #
+  # As we add the suffix "-meow" here, we only need to check:
+  # Length (<= 58)
+  # Characters
+  # Start with letter
 }
 
 variable "location" {
