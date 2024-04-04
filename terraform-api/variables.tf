@@ -1,6 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 
-variable "tfc_organization" {
+variable "tf_organization" {
   type = string
 }
 

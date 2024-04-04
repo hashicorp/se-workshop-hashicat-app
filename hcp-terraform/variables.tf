@@ -1,15 +1,15 @@
 # Copyright (c) HashiCorp, Inc.
 
-variable "tfc_organization" {
+variable "tf_organization" {
   type = string
 }
 
-variable "tfc_workspace" {
+variable "tf_workspace" {
   type    = string
   default = "hashicat-aws"
 }
 
-variable "tfc_workspace_tags" {
+variable "tf_workspace_tags" {
   type    = list(any)
   default = ["hashicat", "CLOUD_ENV"]
 }

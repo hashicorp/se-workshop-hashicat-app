@@ -13,18 +13,18 @@ Obtain name of the target organization from the particpant.
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 data "tfe_organization" "org" {
-  name = var.tfc_organization
+  name = var.tf_organization
 }
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Configure workspace with local execution mode so that plans 
- and applies occur on this workstation. And, Terraform Cloud 
+ and applies occur on this workstation. And, HCP Terraform 
  is only used to store and synchronize state. 
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 resource "tfe_workspace" "hashicat" {
-  name           = var.tfc_workspace
+  name           = var.tf_workspace
   organization   = data.tfe_organization.org.name
-  tag_names      = var.tfc_workspace_tags
+  tag_names      = var.tf_workspace_tags
   execution_mode = "local"
 }
