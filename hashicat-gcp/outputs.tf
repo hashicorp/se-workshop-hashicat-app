@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 # Outputs file
 output "catapp_url" {
   value = "http://${google_compute_instance.hashicat.network_interface.0.access_config.0.nat_ip}"
