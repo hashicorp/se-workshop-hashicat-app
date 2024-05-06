@@ -17,7 +17,7 @@ Obtain name of the target organization from the particpant.
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 data "tfe_organization" "org" {
-  name = var.tfc_organization
+  name = var.tf_organization
 }
 
 resource "random_uuid" "id" {
@@ -36,7 +36,7 @@ resource "tfe_project" "hashicat" {
 
 # /**** **** **** **** **** **** **** **** **** **** **** ****
 #  Configure workspace with remote execution mode so that plans 
-#  and applies occur on the Terraform Cloud platform via API.
+#  and applies occur on the HCP Terraform platform via API.
 # **** **** **** **** **** **** **** **** **** **** **** ****/
 
 resource "tfe_workspace" "hashicat" {

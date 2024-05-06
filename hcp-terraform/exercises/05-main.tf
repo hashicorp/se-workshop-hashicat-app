@@ -13,7 +13,7 @@ Obtain name of the target organization from the particpant.
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 data "tfe_organization" "org" {
-  name = var.tfc_organization
+  name = var.tf_organization
 }
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
@@ -21,7 +21,7 @@ data "tfe_organization" "org" {
  * DEPRECATED *
  
  Configure workspace with local execution mode so that plans 
- and applies occur on this workstation. And, Terraform Cloud 
+ and applies occur on this workstation. And, HCP Terraform 
  is only used to store and synchronize state. 
 
  * DEPRECATED *
@@ -29,47 +29,23 @@ data "tfe_organization" "org" {
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 # resource "tfe_workspace" "hashicat" {
-#   name           = var.tfc_workspace
+#   name           = var.tf_workspace
 #   organization   = data.tfe_organization.org.name
-#   tag_names      = var.tfc_workspace_tags
+#   tag_names      = var.tf_workspace_tags
 #   execution_mode = "local"
 # }
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
-
- * DEPRECATED *
-
  Configure workspace with REMOTE execution mode so that plans 
- and applies occur on Terraform Cloud's infrastructure. 
- Terraform Cloud exectures code and stores state. 
-
-* DEPRECATED *
-
-**** **** **** **** **** **** **** **** **** **** **** ****/
-
-# resource "tfe_workspace" "hashicat" {
-#   name           = var.tfc_workspace
-#   organization   = data.tfe_organization.org.name
-#   tag_names      = var.tfc_workspace_tags
-#   execution_mode = "remote"
-# }
-
-/**** **** **** **** **** **** **** **** **** **** **** ****
- Configure workspace with REMOTE execution mode so that plans 
- and applies occur on Terraform Cloud's infrastructure. 
- Terraform Cloud exectures code and stores state. 
+ and applies occur on HCP Terraform's infrastructure. 
+ HCP Terraform executes code and stores state. 
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 resource "tfe_workspace" "hashicat" {
-  name         = var.tfc_workspace
-  organization = data.tfe_organization.org.name
-  tag_names    = var.tfc_workspace_tags
-  auto_apply   = true
-
-  vcs_repo {
-    identifier     = "${var.github_owner}/${var.github_repo}"
-    oauth_token_id = tfe_oauth_client.github.oauth_token_id
-  }
+  name           = var.tf_workspace
+  organization   = data.tfe_organization.org.name
+  tag_names      = var.tf_workspace_tags
+  execution_mode = "remote"
 }
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
@@ -90,4 +66,3 @@ resource "tfe_workspace_variable_set" "hashicat" {
   variable_set_id = tfe_variable_set.hashicat.id
   workspace_id    = tfe_workspace.hashicat.id
 }
-

@@ -13,7 +13,7 @@ Obtain name of the target organization from the particpant.
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 data "tfe_organization" "org" {
-  name = var.tfc_organization
+  name = var.tf_organization
 }
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
@@ -21,7 +21,7 @@ data "tfe_organization" "org" {
  * DEPRECATED *
  
  Configure workspace with local execution mode so that plans 
- and applies occur on this workstation. And, Terraform Cloud 
+ and applies occur on this workstation. And, HCP Terraform 
  is only used to store and synchronize state. 
 
  * DEPRECATED *
@@ -29,9 +29,9 @@ data "tfe_organization" "org" {
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 # resource "tfe_workspace" "hashicat" {
-#   name           = var.tfc_workspace
+#   name           = var.tf_workspace
 #   organization   = data.tfe_organization.org.name
-#   tag_names      = var.tfc_workspace_tags
+#   tag_names      = var.tf_workspace_tags
 #   execution_mode = "local"
 # }
 
@@ -40,17 +40,17 @@ data "tfe_organization" "org" {
  * DEPRECATED *
 
  Configure workspace with REMOTE execution mode so that plans 
- and applies occur on Terraform Cloud's infrastructure. 
- Terraform Cloud exectures code and stores state. 
+ and applies occur on HCP Terraform's infrastructure. 
+ HCP Terraform exectures code and stores state. 
 
 * DEPRECATED *
 
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 # resource "tfe_workspace" "hashicat" {
-#   name           = var.tfc_workspace
+#   name           = var.tf_workspace
 #   organization   = data.tfe_organization.org.name
-#   tag_names      = var.tfc_workspace_tags
+#   tag_names      = var.tf_workspace_tags
 #   execution_mode = "remote"
 # }
 
@@ -59,15 +59,15 @@ data "tfe_organization" "org" {
  * DEPRECATED *
 
  Configure workspace with REMOTE execution mode so that plans 
- and applies occur on Terraform Cloud's infrastructure. 
- Terraform Cloud exectures code and stores state. 
+ and applies occur on HCP Terraform's infrastructure. 
+ HCP Terraform exectures code and stores state. 
 
 * DEPRECATED *
 
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 # resource "tfe_workspace" "hashicat" {
-#   name         = var.tfc_workspace
+#   name         = var.tf_workspace
 #   organization = data.tfe_organization.org.name
 #   tag_names    = ["hashicat", "CLOUD_ENV"]
 #   auto_apply   = true
@@ -80,17 +80,17 @@ data "tfe_organization" "org" {
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Configure workspace with REMOTE execution mode so that plans 
- and applies occur on Terraform Cloud's infrastructure. 
- Terraform Cloud exectures code and stores state.
+ and applies occur on HCP Terraform's infrastructure. 
+ HCP Terraform exectures code and stores state.
 
  We are removing the VCS configuration so that GitHub Actions
  can trigger remote work.
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
 resource "tfe_workspace" "hashicat" {
-  name         = var.tfc_workspace
+  name         = var.tf_workspace
   organization = data.tfe_organization.org.name
-  tag_names    = var.tfc_workspace_tags
+  tag_names    = var.tf_workspace_tags
   auto_apply   = true
 }
 

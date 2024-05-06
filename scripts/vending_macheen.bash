@@ -10,7 +10,7 @@ export HCLOGO="
              @@@@@@@B7.   .:    .@@@@@   ^@@@@@   Welcome to ACME Vending Macheen!
              @@@@@J    !G&@:    .@@@@@   ^@@@@@   
              @@@@@~   @@@@@.    .@@@@@   ^@@@@@   - Coded by Senior Cloud Admin
-             @@@@@~   @@@@@BPPPPG@@@@@   ^@@@@@   - Powered by Terraform Cloud
+             @@@@@~   @@@@@BPPPPG@@@@@   ^@@@@@   - Powered by HCP Terraform
              @@@@@~   @@@@@@@@@@@@@@@@   ^@@@@@   
              @@@@@~   @@@@@BPPPPB@@@@@   ^@@@@@   Please answer the workflow questions
              @@@@@~   @@@@@.    .@@@@@   ^@@@@@   to allocate the appropriate product 

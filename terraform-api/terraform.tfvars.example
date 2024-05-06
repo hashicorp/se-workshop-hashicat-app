@@ -2,4 +2,4 @@
 Replace the variable value with your own information.
 **** **** **** **** **** **** **** **** **** **** **** ****/
 
-tfc_organization = "YOUR_ORGANIZATION"
+tf_organization = "YOUR_ORGANIZATION"
