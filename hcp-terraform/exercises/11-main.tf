@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add a collection of policies to enhance the governance rules

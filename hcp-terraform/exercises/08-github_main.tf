@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MPL-2.0
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  An OAuth Client represents the connection between an 
