@@ -1,4 +1,4 @@
-# Copyright (c) HashiCorp, Inc.
+# Copyright IBM Corp. 2023, 2024
 
 variable "tf_organization" {
   type = string
