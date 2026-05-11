@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright IBM Corp. 2023, 2024
+# Copyright IBM Corp. 2023, 2026
 
 
 export HCLOGO="                                                  

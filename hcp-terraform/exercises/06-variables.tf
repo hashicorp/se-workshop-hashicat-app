@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 variable "admins" {
   type = list(string)

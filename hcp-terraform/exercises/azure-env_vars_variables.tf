@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 variable "instruqt_azure_arm_client_id" {
   type      = string

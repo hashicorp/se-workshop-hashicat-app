@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add PREFIX to the hashicat workspace variables

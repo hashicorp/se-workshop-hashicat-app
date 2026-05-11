@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add GOOGLE_CREDENTIALS to the Cloud Credentials variable set
