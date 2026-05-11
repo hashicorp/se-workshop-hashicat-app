@@ -1,4 +1,4 @@
-# Copyright IBM Corp. 2023, 2024
+# Copyright IBM Corp. 2023, 2026
 
 # Outputs file
 output "catapp_url" {

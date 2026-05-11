@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Set up ADMINS team with the following permissions:

@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  An OAuth Client represents the connection between an 

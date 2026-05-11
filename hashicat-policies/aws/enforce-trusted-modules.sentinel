@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 import "tfconfig/v2" as tfconfig
 
 param approved_version default "3.0.0"

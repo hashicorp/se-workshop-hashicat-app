@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add ARM_CLIENT_ID to the Cloud Credentials variable set

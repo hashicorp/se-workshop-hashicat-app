@@ -1,3 +1,5 @@
+# Copyright IBM Corp. 2023, 2026
+
 
 /**** **** **** **** **** **** **** **** **** **** **** ****
  Add AWS_ACCESS_KEY_ID to the Cloud Credentials variable set
